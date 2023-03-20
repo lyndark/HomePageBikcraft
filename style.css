@@ -1,11 +1,32 @@
+:root{
+--cor-primaria: #844ABF;
+--cor-primaria-escura: #52297B;
+--subtitulo: rgba(0, 0, 0, 0.2);
+--fundo-1: #ffffff;
+--fundo-2: #f7f7f7;
+--texto: #000000;
+--onda: url("../img/onda-clara.svg")
+}
+
+@media(prefers-color-scheme: dark){
+  :root{
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url("../img/onda-escura.svg");
+    }  
+}
+
 body{
   font-family: Arial, Helvetica, sans-serif;
-  background: #f7f7f7;
+  background: var(--fundo-2);
   margin: 0rem;
   margin-top: 3.75rem;
   display: grid;
   gap: 60px;
   justify-items: center;
+  color: var(--texto);
 }
 
 p, h1, h2, h3{
@@ -31,8 +52,8 @@ p{
 }
 
 .menu a{
-  background: #fff;
-  color: #000;
+  background: var(--fundo-1);
+  color:  var(--texto);
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 6px;
@@ -48,7 +69,7 @@ ul{
 }
 
 .menu a:hover{
-  border: 2px solid #844ABF;
+  border: 2px solid var(--cor-primaria);
 }
 
 .conteudo{
@@ -96,7 +117,7 @@ ul{
 }
 
 .introducao{
-  background: #fff;
+  background: var(--fundo-1);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -126,8 +147,8 @@ ul{
 }
 
 .botao{
-  background: #844ABF;
-  color: #fff;
+  background: var(--cor-primaria);
+  color: #ffffff;
   border-radius: 4px;
   text-decoration: none;
   text-transform: uppercase;
@@ -136,7 +157,7 @@ ul{
 }
 
 .botao:hover{
-  background: #52297B;
+  background: var(--cor-primaria-escura);
   animation: 4ms;
 }
 
@@ -146,18 +167,18 @@ ul{
 }
 
 .subtitulo{
-  color: #EDE8F1;
+  color: var(--subtitulo);
   font-size: 4rem;
   text-transform: uppercase;
   text-align: right;
   padding: 40px;
   align-self: center;
-  background-image: url("../img/onda.svg");
+  background-image: var(--onda);
   /* word-break: break-all; --quebrar palavras*/
 }
 
 .vantagens{
-  background: #fff;
+  background: var(--fundo-1);
   padding: 40px;
 
 }
@@ -175,16 +196,16 @@ ul{
 }
 
 .vantagens-item:hover{
-  border-left: 4px solid #844ABF;
+  border-left: 4px solid var(--cor-primaria);
 }
 
 .vantagens-item:hover{
-  background: #f7f7f7;
-  border-left: 4px solid #844ABF;
+  background: var(--fundo-2);
+  border-left: 4px solid var(--cor-primaria);
 }
 
 footer{
-  background: #fff;
+  background: var(--fundo-1);
   width: 100%;
   padding: 1.5rem;
   text-align: center;
